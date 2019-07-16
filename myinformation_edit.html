@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shutter &mdash; Colorlib Website Template</title>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <script src="{% static 'JS/jquery.js' %}" type="text/javascript"></script>
+    {% load staticfiles %}
+    <script src="{% static 'JS/jquery.cookie.js' %}" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: #666666
+        }
+
+        .STYLE1 {
+            font-size: 14px
+        }
+    </style>
+</head>
+  <body>
+  
+
+      <div class="site-wrap">
+
+          <div class="site-mobile-menu">
+              <div class="site-mobile-menu-header">
+                  <div class="site-mobile-menu-close mt-3">
+                      <span class="icon-close2 js-menu-toggle"></span>
+                  </div>
+              </div>
+              <div class="site-mobile-menu-body"></div>
+          </div>
+
+          <!-- Header section -->
+          <header class="header-section">
+              <div class="header-warp">
+                  <div class="header-bar-warp d-flex">
+                      <nav class="top-nav-area w-100">
+                          <div class="user-panel">
+                              <a href="">登录</a>
+                          </div>
+                          <!-- Menu -->
+                          <ul class="main-menu primary-menu">
+                              <li><a href="review.html">个人信息</a></li>
+                              <li><a href="blog.html">考勤记录</a></li>
+                              <li>
+                                  <a href="games.html">工作管理</a>
+                                  <ul class="sub-menu">
+                                      <li><a href="game-single.html">上班打卡</a></li>
+                                      <li><a href="game-single.html">下班打卡</a></li>
+                                      <li><a href="game-single.html">请假入口</a></li>
+                                      <li><a href="game-single.html">出差入口</a></li>
+                                  </ul>
+                              </li>
+                              <li>
+                                  <a href="games.html">项目管理</a>
+                                  <ul class="sub-menu">
+                                      <li><a href="game-single.html">创建项目</a></li>
+                                      <li><a href="game-single.html">下班打卡</a></li>
+                                      <li><a href="game-single.html">请假入口</a></li>
+                                      <li><a href="game-single.html">出差入口</a></li>
+                                  </ul>
+                              </li>
+                          </ul>
+                      </nav>
+                  </div>
+              </div>
+          </header>
+          <!-- Header section end -->
+          <main class="main-content">
+              <div class="container-fluid photos">
+                  <div class="row justify-content-center">
+
+                      <div class="col-md-6 pt-4" data-aos="fade-up">
+					  <br> <br> <br> <br>
+                          <h2 class="text-white mb-4">个人信息主页</h2>
+
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <p class="bg-warning">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit. Ipsa explicabo quasi cum, laudantium neque at veniam itaque atque <a href="#">necessitatibus</a> temporibus! Beatae sit soluta magni neque autem, suscipit dolorem, quo alias.</p>
+
+
+                                  <div class="row">
+                                      <div class="col-md-12">
+
+
+
+                                          <form action="/myinformation_edit/" method="post">
+                                              {% csrf_token %}
+
+
+
+                                              <div class="row form-group">
+                                                  <div class="col-md-6 mb-3 mb-md-0">
+                                                      <label class="text-white" for="fname">昵称:{{username}}</label><br>
+                                                      <label class="text-white" for="fname">真实姓名</label>
+                                                      <textarea name="name" id="name" cols="10" rows="1" class="form-control">{{name}}</textarea><br>
+                                                      <label class="text-white" for="fname">性别</label>
+                                                      <input type="radio" id="sex" name="sex" value="man" />男         &nbsp;
+                                                      <input type="radio" id="sex" name="sex" value="lady" />女<br><br />
+                                                  </div>
+                                                  <div class="col-md-12">
+                                                      <label class="text-white">电话号码</label>
+                                                      <textarea name="telenum" id="telenum" cols="10" rows="1" class="form-control">{{telenum}}</textarea><br>
+                                                      <label class="text-white">年龄</label>
+                                                      <textarea name="age" id="age" cols="7" rows="1" class="form-control">{{age}}</textarea><br>
+                                                  </div>
+                                              </div>
+
+                                              <div class="row form-group">
+
+                                                  <div class="col-md-12">
+                                                      <label class="text-white" for="email">Email</label>
+                                                      
+                                                      <textarea name="email" id="email" cols="10" rows="1" class="form-control">{{email}}</textarea><br>
+                                                  </div>
+                                              </div>
+
+                                              <div class="row form-group">
+
+                                                  <div class="col-md-12">
+                                                      <label class="text-white" for="subject">职位</label>
+                                                      <textarea name="position" id="position" cols="10" rows="1" class="form-control">{{position}}</textarea><br>
+                                                      <label class="text-white" for="subject">部门</label>
+                                                      <textarea name="department" id="department" cols="10" rows="1" class="form-control">{{department}}</textarea><br>
+                                                      <label class="text-white" for="subject">项目编号</label>
+                                                      <textarea name="pronum" id="pronum" cols="10" rows="1" class="form-control">{{pronum}}</textarea><br>
+                                                  </div>
+                                              </div>
+
+                                              <div class="row form-group mb-5">
+                                                  <div class="col-md-12">
+                                                      <label class="text-white" for="message">家庭住址</label>
+                                                      <textarea name="homeaddress" id="homeaddress" cols="20" rows="7" class="form-control" placeholder="Write your home address here...">{{homeaddress}}</textarea>
+                                                  </div>
+                                              </div>
+
+                                              <div class="row form-group">
+                                                  <div class="col-md-12">
+                                                      <input type="submit" value="Send Message" class="btn btn-primary btn-md text-white">
+                                                  </div>
+                                              </div>
+
+
+                                          </form>
+                                      </div>
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <div class="row justify-content-center">
+                      <div class="col-md-12 text-center py-5">
+                          <p>
+                              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                              Copyright &copy;
+                              <script>document.write(new Date().getFullYear());</script>
+                              All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Pro sharket</a>
+                              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </main>
+
+      </div> <!-- .site-wrap -->
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/jquery.fancybox.min.js"></script>
+
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>
