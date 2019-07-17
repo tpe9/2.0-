@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Shutter &mdash; Colorlib Website Template</title>
+    <title>个人信息主页</title>
     <meta charset="utf-8">
     {% load staticfiles %}
     <script src="{% static 'JS/jquery.js' %}" type="text/javascript"></script>
@@ -25,16 +25,37 @@
 
     <link rel="stylesheet" href="css/style.css">
     <style>
-        body {
-            background-color: #666666
-        }
+ .div2
+{
+    letter-spacing: 10px;
+    animation:myfirst 3s;
+    -webkit-animation:myfirst 3s; /* Safari and Chrome */
+    font-size: 30px;
+    font-family: 微软雅黑;
+    color: white;
+}
+@keyframes myfirst
+{
+    from {opacity:0;}
+    to {opacity:1;}
+}
 
+@-webkit-keyframes myfirst 
+{    /* Safari and Chrome */
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+        body{padding:0;margin:0;}
+		#bg{width:100%;height:100%;position:absolute;z-index:-1;opacity: 0.82;}
         .STYLE1 {
-            font-size: 14px
+            font-size: 14px;
         }
-    </style>
+    </style>	    
+       
 </head>
   <body>
+<img id="bg" src="./images/bg5.jpg" />  
   
 
       <div class="site-wrap">
@@ -90,7 +111,8 @@
 
                       <div class="col-md-6 pt-4" data-aos="fade-up">
 					  <br> <br> <br> <br>
-                          <h2 class="text-white mb-4">个人信息主页</h2>
+                          <div class="div2" style="text-align: center;">个人信息主页</div><br>
+                          <div class="div2" style="text-align: center; font-size:16px; ">在这里，你可以查看并编辑你的个人信息</div>
 
                           <div class="row">
                               <div class="col-md-12">
@@ -107,7 +129,7 @@
 
 
 
-                                              <div class="row form-group">
+                                              <div class="row form-group" style="font-size: 14px">
                                                   <div class="col-md-6 mb-3 mb-md-0">
                                                       <label class="text-white" for="fname">昵称:{{username}}</label><br>
                                                       <label class="text-white" for="fname">真实姓名</label>
@@ -124,7 +146,7 @@
                                                   </div>
                                               </div>
 
-                                              <div class="row form-group">
+                                              <div class="row form-group" style="font-size: 14px" >
 
                                                   <div class="col-md-12">
                                                       <label class="text-white" for="email">Email</label>
@@ -133,7 +155,7 @@
                                                   </div>
                                               </div>
 
-                                              <div class="row form-group">
+                                              <div class="row form-group"style="font-size: 14px" >
 
                                                   <div class="col-md-12">
                                                       <label class="text-white" for="subject">职位</label>
@@ -145,18 +167,20 @@
                                                   </div>
                                               </div>
 
-                                              <div class="row form-group mb-5">
+                                              <div class="row form-group mb-5" style="font-size: 14px">
                                                   <div class="col-md-12">
                                                       <label class="text-white" for="message">家庭住址</label>
                                                       <textarea name="homeaddress" id="homeaddress" cols="20" rows="7" class="form-control" placeholder="Write your home address here...">{{homeaddress}}</textarea>
                                                   </div>
                                               </div>
 
-                                              <div class="row form-group">
-                                                  <div class="col-md-12">
-                                                      <input type="submit" value="Send Message" class="btn btn-primary btn-md text-white">
+                                           
+                                                <div class="row form-group">
+                                                  <div class="col-md-12" align="center">
+                                                      <input type="submit" value="修改" class="btn btn-primary btn-md text-white">
                                                   </div>
                                               </div>
+                                              
 
 
                                           </form>
